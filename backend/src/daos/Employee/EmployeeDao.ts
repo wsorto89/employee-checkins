@@ -35,10 +35,11 @@ export class EmployeeDao implements IEmployeeDao {
 
   public async checkIn(employeeID: number): Promise<void> {
     try {
+      const currentDate = new Date();
       await connection.execute(`
-                INSERT INTO log(e_id, checkin)
-                VALUES(?, ?)
-            `, [employeeID, new Date()]);
+                INSERT INTO log(e_id, checkin, checkin_date, checkin_time)
+                VALUES(?, ?, ?, ?)
+            `, [employeeID, currentDate, currentDate, currentDate]);
     }
     catch (e) {
       logger.error(e);
