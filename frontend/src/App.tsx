@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 
-import Title from './components/title/title.component';
-import Content from './components/content/content.component';
 import './App.css';
+
+const Title = lazy(() => import('./components/title/title.component'));
+const Content = lazy(() => import('./components/content/content.component'));
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Title />
-      <Content />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Title />
+        <Content />
+      </Suspense>
     </div>
   );
 }
