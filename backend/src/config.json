@@ -1,0 +1,11 @@
+{
+  "db": {
+    "host": "sql9.freemysqlhosting.net",
+    "user": "sql9300148",
+    "password": "hrxUXkBRV7",
+    "database": "sql9300148",
+    "waitForConnections": true,
+    "connectionLimit": 10,
+    "queueLimit": 0
+  }
+}
